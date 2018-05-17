@@ -16,6 +16,7 @@ import { requestPermission } from 'react-native-android-permissions';
 
 
 export default class MapViewEx extends Component{
+
     state = {
         mapRegion: null,
         lastLat: null,

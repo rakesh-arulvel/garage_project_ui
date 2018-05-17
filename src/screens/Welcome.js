@@ -5,8 +5,8 @@ import { createStackNavigator } from 'react-navigation';
 import { Button, Text} from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
-
 export default class SignUp extends React.Component {
+
   render() {
    
     return (

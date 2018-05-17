@@ -2,10 +2,10 @@ import React, { Component } from 'react'
 import {
   StyleSheet,
   TouchableHighlight,
-  Text,
   View,
   TouchableOpacity
-} from 'react-native'
+} from 'react-native';
+import { Button, Text } from 'react-native-elements';
 import DatePicker from 'react-native-datepicker'
 
 export default class ParkLater extends React.Component {
@@ -92,6 +92,7 @@ export default class ParkLater extends React.Component {
         onDateChange={(date) => {this.setState({date: date})}}
       />
 
+        <Button title='Continue' onPress={() => this.props.navigation.navigate('MapViewEx')} route='MapView' />
       </View>
     )
   }

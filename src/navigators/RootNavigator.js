@@ -9,7 +9,8 @@ import {
 import ParkNow from '../screens/ParkNow';
 import Panel from '../screens/Panel';
 import ParkLater from '../screens/ParkLater';
-import MapView from '../screens/MapViewEx'; 
+import MapView from '../screens/MapView'; 
+import MapViewEx from '../screens/MapViewEx'; 
 import Bookings from '../screens/Bookings';
 
 
@@ -51,7 +52,8 @@ export const RootStack = createStackNavigator(
     SignUp: SignUp,
     SignIn: SignIn,
     Dashboard: TabNav,
-    MapView: MapView
+    MapView: MapView,
+    MapViewEx: MapViewEx
   },
   {
     initialRouteName: 'Welcome',
