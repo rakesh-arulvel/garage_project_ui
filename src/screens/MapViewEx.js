@@ -75,7 +75,7 @@ export default class MapViewEx extends Component{
         const { region } = this.props;
         return (
             <View style={{ flex: 1 }}>
-                <SearchBar style={styles.searchBar}
+                <SearchBar lightTheme style={styles.searchBar}
   placeholder='Destination Here...' />
                 { <MapView
                     style={styles.map}

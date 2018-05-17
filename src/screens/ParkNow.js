@@ -6,7 +6,7 @@ import {
   View,
 } from 'react-native';
 import { Button, Text } from 'react-native-elements';
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 export default class ParkNow extends React.Component {
 
   constructor(props) {
@@ -50,7 +50,13 @@ export default class ParkNow extends React.Component {
         </TouchableHighlight>
 
 
-        <Button title='Continue' onPress={() => this.props.navigation.navigate('MapView')}  route='MapView'/>
+        <Button icon={
+          <Icon
+            name='arrow-right'
+            size={15}
+            color='white'
+          />
+        } title='Continue' onPress={() => this.props.navigation.navigate('MapView')}  route='MapView'/>
       </View>
 
 
