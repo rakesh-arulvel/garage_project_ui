@@ -4,14 +4,20 @@ import {
   TouchableHighlight,
   Text,
   View,
+  TouchableOpacity
 } from 'react-native'
+import DatePicker from 'react-native-datepicker'
 
 export default class ParkLater extends React.Component {
+  state = {
+    isDateTimePickerVisible: true,
+  };
 
   constructor(props) {
     super(props)
     this.state = { count: 0 }
   }
+
 
   onPressIncrease = () => {
     this.setState({
@@ -25,28 +31,66 @@ export default class ParkLater extends React.Component {
     })
   }
 
+  _handleDatePicked = (date) => {
+    console.log('A date has been picked: ', date);
+    this._hideDateTimePicker();
+  };
+
  render() {
+    var today = new Date();
     return (
 
       <View style={styles.container}>
       <View style={[styles.countContainer]}>
-      <Text> Next </Text>
-        <Text style={[styles.countText]}>
-          { this.state.count !== 0 ? this.state.count: null}
-        </Text>
       </View>
-        <TouchableHighlight
-         style={styles.button}
-         onPress={this.onPressDecrease}
-        >
-         <Text> - </Text>
-        </TouchableHighlight>
-        <TouchableHighlight
-         style={styles.button}
-         onPress={this.onPressIncrease}
-        >
-         <Text> + </Text>
-        </TouchableHighlight>
+
+      <DatePicker
+        style={{width: 200}}
+        date={this.state.date}
+        mode="datetime"
+        placeholder="select date"
+        format="YYYY-MM-DD"
+        minDate={today}
+        maxDate="2018-06-21"
+        confirmBtnText="Confirm"
+        cancelBtnText="Cancel"
+        customStyles={{
+          dateIcon: {
+            position: 'absolute',
+            left: 0,
+            top: 4,
+            marginLeft: 0
+          },
+          dateInput: {
+            marginLeft: 36
+          }
+        }}
+        onDateChange={(date) => {this.setState({date: date})}}
+      />
+
+      <DatePicker
+        style={{width: 200}}
+        date={this.state.date}
+        mode="datetime"
+        placeholder="select date"
+        format="YYYY-MM-DD"
+        minDate={today}
+        maxDate="2018-06-21"
+        confirmBtnText="Confirm"
+        cancelBtnText="Cancel"
+        customStyles={{
+          dateIcon: {
+            position: 'absolute',
+            left: 0,
+            top: 4,
+            marginLeft: 0
+          },
+          dateInput: {
+            marginLeft: 36
+          }
+        }}
+        onDateChange={(date) => {this.setState({date: date})}}
+      />
 
       </View>
     )
