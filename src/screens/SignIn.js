@@ -3,7 +3,7 @@ import { StyleSheet, View } from 'react-native';
 import DefaultButton from '../components/buttons/DefaultButton.js';
 import { Button, Text } from 'react-native-elements';
 import { Input } from 'react-native-elements';
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 export default class SignUp extends React.Component {
   render() {
     return (
@@ -23,7 +23,14 @@ export default class SignUp extends React.Component {
         <TextInput style={styles.inputBox} underlineColorAndroid= 'rgba(0,0,0,0)'
         placeholder= "Password" secureTextEntry= {true} placeholderTextColotr= "#ffffff" /> */}
 
-        <Button style={styles.button} title='Sign In' onPress={() => this.props.navigation.navigate('Dashboard')} backgroundColor='#462066' route='Dashboard' />
+        <Button icon={
+          <Icon
+            name='arrow-right'
+            size={15}
+            color='white'
+          />
+        } style={styles.button} title='Sign In' onPress={() => this.props.navigation.navigate('Dashboard')} backgroundColor='#462066' route='Dashboard' />
+
       </View>
     );
   }

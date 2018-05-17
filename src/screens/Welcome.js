@@ -16,12 +16,26 @@ export default class SignUp extends React.Component {
         <Button raised style={styles.buttons}
           title='Sign Up'  backgroundColor='#462066'
           containerStyle={{ marginTop: 20 }}
-
+        icon={
+          <Icon
+            name='arrow-right'
+            size={15}
+            color='white'
+          />
+        }
           onPress={() => this.props.navigation.navigate('SignUp')}
         />
 
         {/* <DefaultButton text='Sign Up'  /> */}
-        <Button raised style={styles.buttons} title='Sign In' onPress={() => this.props.navigation.navigate('SignIn')} backgroundColor='#462066'
+        <Button raised style={styles.buttons} title='Sign In' 
+          icon={
+            <Icon
+              name='arrow-right'
+              size={15}
+              color='white'
+            />
+          }
+        onPress={() => this.props.navigation.navigate('SignIn')} backgroundColor='#462066'
           containerStyle={{ marginTop: 20 }}
         />
       </View>

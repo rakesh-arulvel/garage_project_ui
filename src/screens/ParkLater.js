@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 import { Button, Text } from 'react-native-elements';
 import DatePicker from 'react-native-datepicker'
-
+import Icon from 'react-native-vector-icons/FontAwesome';
 export default class ParkLater extends React.Component {
   state = {
     isDateTimePickerVisible: true,
@@ -92,7 +92,13 @@ export default class ParkLater extends React.Component {
         onDateChange={(date) => {this.setState({date: date})}}
       />
 
-        <Button title='Continue' onPress={() => this.props.navigation.navigate('MapViewEx')} route='MapView' />
+        <Button icon={
+          <Icon
+            name='arrow-right'
+            size={15}
+            color='white'
+          />
+        } title='Continue' onPress={() => this.props.navigation.navigate('MapViewEx')} route='MapView' />
       </View>
     )
   }
