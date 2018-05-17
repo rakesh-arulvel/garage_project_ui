@@ -15,7 +15,7 @@
         "react-daterange-picker": "^2.0.0-rc.1",
         "react-native": "0.55.4",
         "react-native-android-permissions": "^1.0.2",
-        "react-native-elements": "^0.19.1",
+        "react-native-elements": "^1.0.0-BETA5",
         "react-native-datepicker": "^1.7.2",
         "react-native-maps": "^0.21.0",
         "react-native-modal-datetime-picker": "^5.1.0",

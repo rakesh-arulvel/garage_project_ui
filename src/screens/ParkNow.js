@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import DefaultButton from '../components/buttons/DefaultButton.js';
+//import DefaultButton from '../components/buttons/DefaultButton.js';
 import {
   StyleSheet,
   TouchableHighlight,
-  Text,
   View,
-} from 'react-native'
+} from 'react-native';
+import { Button, Text } from 'react-native-elements';
 
 export default class ParkNow extends React.Component {
 
@@ -31,8 +31,8 @@ export default class ParkNow extends React.Component {
 
       <View style={styles.container}>
       <View style={[styles.countContainer]}>
-      <Text> Next </Text>
-        <Text style={[styles.countText]}>
+      <Text h2> Next </Text>
+        <Text style={[styles.countText]} h4>
           { this.state.count !== 0 ? this.state.count: null}
         </Text>
       </View>
@@ -50,7 +50,7 @@ export default class ParkNow extends React.Component {
         </TouchableHighlight>
 
 
-        <DefaultButton text='Continue' navigation={this.props.navigation} route='MapView'/>
+        <Button title='Continue' onPress={() => this.props.navigation.navigate('MapView')}  route='MapView'/>
       </View>
 
 
@@ -62,7 +62,8 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    paddingHorizontal: 100
+    paddingHorizontal: 100,
+    backgroundColor: '#fff'
   },
   button: {
     alignItems: 'center',

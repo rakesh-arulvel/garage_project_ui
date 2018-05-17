@@ -9,7 +9,7 @@ import {
 import ParkNow from '../screens/ParkNow';
 import Panel from '../screens/Panel';
 import ParkLater from '../screens/ParkLater';
-import MapView from '../screens/MapView'; 
+import MapView from '../screens/MapViewEx'; 
 import Bookings from '../screens/Bookings';
 
 
