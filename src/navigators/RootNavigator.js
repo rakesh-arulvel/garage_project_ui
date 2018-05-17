@@ -41,6 +41,7 @@ export const TabNav = TabNavigator({
   	},
     activeTintColor: 'red'
   },
+    initialRouteName: 'Panel',
   tabBarComponent: TabBarBottom,
   tabBarPosition: 'bottom',
 });

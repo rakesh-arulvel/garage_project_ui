@@ -21,7 +21,7 @@ export default class SignUp extends React.Component {
         <Input style={styles.inputBox} underlineColorAndroid= 'rgba(0,0,0,0)'
       placeholder= "Confirm Password" secureTextEntry= {true} placeholderTextColotr= "#ffffff" />
 
-        <Button title='Sign Up'/>
+        <Button title='Sign Up' onPress={() => this.props.navigation.navigate('Dashboard')}/>
       </View>
     );
   }

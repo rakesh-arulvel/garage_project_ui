@@ -1,30 +1,42 @@
 import React, { Component } from 'react';
 import { FlatList, StyleSheet, Text, View, TouchableHighlight } from 'react-native';
 import DefaultButton from '../components/buttons/DefaultButton.js';
+import { ListItem } from 'react-native-elements';
 
+const list  = 
+  [
+  {
+    title: 'My Bookings',
+    route: 'Bookings',
+      icon: 'av-timer'
+  },
+  {
+    title: 'Rent a new Space',
+    route: 'Rentals',
+    icon: 'av-timer'
+  },
+  {
+    title: 'My Spaces',
+    route: 'Spaces',
+    icon: 'av-timer'
+  }
+  ];
 export default class Panel extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <FlatList
-          data={[
-            {
-              title: 'My Bookings',
-              route:'Bookings'
-            },
-            {
-              title: 'Rent a new Space',
-              route:'Rentals'
-            },
-            {
-              title: 'My Spaces',
-              route:'Spaces'
-            }
-          ]}
-          renderItem={({item}) =>
-            <DefaultButton text={item.title} navigation={this.props.navigation} route={item.route}/>
-          }
-        />
+        
+        {
+          list.map((item, i) => (
+            <ListItem
+              key={i}
+              title={item.title}
+              leftIcon={{ name: item.icon }}
+              onPress={() => this.props.navigation.navigate(item.route)}
+              badge={{ value: i, textStyle: { color: 'white' }, containerStyle: { marginTop: -20 } }}
+            />
+          ))
+        }
       </View>
     );
   }
