@@ -9,8 +9,8 @@ export default class SignUp extends React.Component {
     return (
       <View style={styles.container}>
         <Text style={styles.heading}>Welcome</Text>
-        <DefaultButton text='Sign Up' navigation={this.props.navigation}/>
-        <DefaultButton text='Sign in' navigation={this.props.navigation}/>
+        <DefaultButton text='Sign Up' navigation={this.props.navigation} route='SignUp' />
+        <DefaultButton text='Sign in' navigation={this.props.navigation} route='SignIn' />
       </View>
     );
   }

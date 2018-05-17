@@ -53,7 +53,7 @@ export const RootStack = createStackNavigator(
     Dashboard: TabNav
   },
   {
-    initialRouteName: 'Dashboard',
+    initialRouteName: 'Welcome',
   }
 );
 
