@@ -15,11 +15,59 @@ import { requestPermission } from 'react-native-android-permissions';
 
 
 export default class MapViewEx extends Component{
+
     state = {
         mapRegion: null,
-        lastLat: null,
-        lastLong: null,
+        latitude: null,
+        longitude: null,
+      markers: [
+      {
+        price: 10,
+        rating: 3.4,
+        title: 'current',
+        coordinates: {
+          latitude: 3.148561,
+          longitude: 101.652778
+        },
+      },
+      {
+        price: 25,
+        rating: 4.4,
+        title: 'l1',
+        coordinates: {
+          latitude: 3.149771,
+          longitude: 101.655449
+        },  
+      },
+       {
+        price: 10,
+        rating: 4.9,
+        title: 'l2',
+        coordinates: {
+          latitude: 3.149771,
+          longitude: 101.655449
+        },  
+      },
+       {
+        price: 40,
+        rating: 2.4,
+        title: 'l3',
+        coordinates: {
+          latitude: 3.149771,
+          longitude: 101.655449
+        },  
+      },
+       {
+        price: 40,
+        rating: 2.4,
+        title: 'l4',
+        coordinates: {
+          latitude: 3.149771,
+          longitude: 101.655449
+        },  
+      }]
     }
+
     componentDidMount() {
         var that = this;
         setTimeout(() => {
@@ -90,6 +138,19 @@ export default class MapViewEx extends Component{
                         }}
                         >
                     </MapView.Marker>
+
+                    {this.state.markers.map(marker => (
+                        <MapView.Marker
+                            coordinate={{
+                                latitude: (marker.coordinates.latitude + 0.00050) || -36.82339,
+                                longitude: (marker.coordinates.longitude + 0.00050) || -73.03569,
+                            }} >  
+                            <MapView.Callout>
+                                <Text style={{fontWeight: 'bold'}}>Price: Rs.10</Text>
+                                <Text style={{fontWeight: 'bold'}}>Rating: 3.4</Text>
+                            </MapView.Callout>
+                        </MapView.Marker>
+                    ))}
                 </MapView>
             </View>
         );
@@ -106,5 +167,12 @@ const styles = StyleSheet.create({
     },
     map: {
         ...StyleSheet.absoluteFillObject,
+    },
+    bubble: {
+        width: 140,
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'row',
+        padding:5,
     },
 });
