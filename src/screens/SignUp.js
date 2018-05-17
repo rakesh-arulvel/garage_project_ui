@@ -6,7 +6,7 @@ export default class SignUp extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.heading}>Sign In</Text>
+        <Text style={styles.heading}>Sign Up</Text>
         <TextInput style={styles.inputBox} underlineColorAndroid= 'rgba(0,0,0,0)'
       placeholder= "Full Name" placeholderTextColotr= "#ffffff" />
 

@@ -13,7 +13,7 @@ export default class SignUp extends React.Component {
         <TextInput style={styles.inputBox} underlineColorAndroid= 'rgba(0,0,0,0)'
         placeholder= "Password" secureTextEntry= {true} placeholderTextColotr= "#ffffff" />
 
-        <DefaultButton text='Sign In'/>
+        <DefaultButton text='Sign In' navigation={this.props.navigation} route='Dashboard' />
       </View>
     );
   }

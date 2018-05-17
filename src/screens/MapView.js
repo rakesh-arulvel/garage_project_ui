@@ -8,9 +8,9 @@ import {
     View
 } from 'react-native';
 import MapView from 'react-native-maps';
-import Location from './components/geolocation.js';
+// import Location from './components/geolocation.js';
 import { requestPermission } from 'react-native-android-permissions';
-import currentLocator from './assets/current_location.png'
+//import currentLocator from './assets/current_location.png'
 
 
 
@@ -88,7 +88,7 @@ export default class MapViewEx extends Component{
                             latitude: (this.state.latitude + 0.00050) || -36.82339,
                             longitude: (this.state.longitude + 0.00050) || -73.03569,
                         }}
-                        image={currentLocator}>
+                        >
                     </MapView.Marker>
                 </MapView>
             </View>
