@@ -27,8 +27,8 @@ export default class MapViewEx extends Component{
         title: 'l0',
         const: -0.02,
         coordinates: {
-          latitude: 1,
-          longitude: 0.5
+          latitude: 0.001,
+          longitude: 0.005
         },
       },
       {
@@ -37,8 +37,8 @@ export default class MapViewEx extends Component{
         title: 'l1',
         const: 0.04,
         coordinates: {
-          latitude: 0.3,
-          longitude: 0.7
+          latitude: 0.003,
+          longitude: 0.007
         },  
       },
        {
@@ -47,8 +47,8 @@ export default class MapViewEx extends Component{
         title: 'l2',
         const: 0.05,
         coordinates: {
-          latitude: 1.1,
-          longitude: 0.2
+          latitude: 0.001,
+          longitude: 0.002
         },  
       },
        {
@@ -57,8 +57,8 @@ export default class MapViewEx extends Component{
         title: 'l3',
         const: -0.04,
         coordinates: {
-          latitude: -0.9,
-          longitude: 1
+          latitude: -0.009,
+          longitude: 0.01
         },  
       },
        {
@@ -67,8 +67,8 @@ export default class MapViewEx extends Component{
         title: 'l4',
         const: -0.06,
         coordinates: {
-          latitude: -0.5,
-          longitude: -0.5
+          latitude: -0.005,
+          longitude: -0.005
         },  
       }]
     }
