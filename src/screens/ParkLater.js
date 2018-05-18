@@ -9,6 +9,7 @@ import { Button, Text } from 'react-native-elements';
 import DatePicker from 'react-native-datepicker'
 import Icon from 'react-native-vector-icons/FontAwesome';
 export default class ParkLater extends React.Component {
+  static navigationOptions = { header: null }
   state = {
     isDateTimePickerVisible: true,
   };

@@ -24,7 +24,7 @@ export default class NewSpace extends React.Component {
       placeholder= "How many slots" secureTextEntry= {true} placeholderTextColotr= "#ffffff" />
 
       <Picker
-        selectedValue={this.state.language}
+        selectedValue={this.state.slot_type}
         style={{ height: 50, width: 100 }}
         onValueChange={(itemValue, itemIndex) => this.setState({slot_type: itemValue})}>
         <Picker.Item label="Bike" value="bike" />
@@ -41,9 +41,9 @@ export default class NewSpace extends React.Component {
           <Icon
             name='arrow-right'
             size={15}
-            color='white'
+            color='#4266b2'
           />
-        } title='Sign Up' onPress={() => this.props.navigation.navigate('Dashboard')}/>
+        } title='Confirm Booking' onPress={() => this.props.navigation.navigate('Dashboard')}/>
       </View>
     );
   }
@@ -52,7 +52,7 @@ export default class NewSpace extends React.Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#ffffff',
 
   },
 

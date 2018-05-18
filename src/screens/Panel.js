@@ -11,13 +11,13 @@ const list  =
       icon: 'av-timer'
   },
   {
-    title: 'Rent a new Space',
-    route: 'Rentals',
+    title: 'Become a host :)',
+    route: 'Spaces',
     icon: 'av-timer'
   },
   {
     title: 'My Spaces',
-    route: 'Spaces',
+    route: 'Rentals',
     icon: 'av-timer'
   }
   ];
@@ -33,8 +33,8 @@ export default class Panel extends Component {
               key={i}
               title={item.title}
               leftIcon={{ name: item.icon }}
+              rightIcon={{ name: 'arrow-right', type: 'font-awesome', style: { marginRight: 10, fontSize: 15 } }}
               onPress={() => this.props.navigation.navigate(item.route)}
-              badge={{ value: (Math.random()*10).toFixed(), textStyle: { color: 'white' }, containerStyle: { marginTop: -20 } }}
             />
           ))
         }

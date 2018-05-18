@@ -5,7 +5,9 @@ import { Button, Text } from 'react-native-elements';
 import { Input } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 export default class SignUp extends React.Component {
+  static navigationOptions = { header: null }
   render() {
+
     return (
       <View style={styles.container}>
         <Text style={styles.heading} h1>Sign In</Text>

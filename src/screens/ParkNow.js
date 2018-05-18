@@ -8,6 +8,7 @@ import {
 import { Button, Text } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/FontAwesome';
 export default class ParkNow extends React.Component {
+  static navigationOptions = { header: null }
 
   constructor(props) {
     super(props)
