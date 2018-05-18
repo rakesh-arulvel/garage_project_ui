@@ -31,10 +31,10 @@ export default class ParkNow extends React.Component {
 
       <View style={styles.container}>
       <View style={[styles.countContainer]}>
-      <Text h2> Next </Text>
-        <Text style={[styles.countText]} h4>
+      <Text h5> Book for the next </Text>
+        <Text style={[styles.countText]} h4> 
           { this.state.count !== 0 ? this.state.count: null}
-        </Text>
+        </Text><Text h5> minutes</Text>
       </View>
         <TouchableHighlight
          style={styles.button}
@@ -56,7 +56,7 @@ export default class ParkNow extends React.Component {
             size={15}
             color='white'
           />
-        } title='Continue' onPress={() => this.props.navigation.navigate('MapView')}  route='MapView'/>
+        } title='View Nearby Slots' onPress={() => this.props.navigation.navigate('MapView')}  route='MapView'/>
       </View>
 
 
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
   },
   button: {
     alignItems: 'center',
-    backgroundColor: 'grey',
+    backgroundColor: '#BEBEBE',
     padding: 10,
     marginBottom: 10
   },
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
     padding: 10
   },
   countText: {
-    color: 'red',
+    color: '#4266b2',
     fontSize: 40,
   }
 })

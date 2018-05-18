@@ -33,9 +33,15 @@ const PanelTab = StackNavigator({
 
 export const TabNav = TabNavigator(
   {
-    Now: { screen: ParkNow },
+    Now: { screen: ParkNow,
+    navigationOptions: {
+        header: null,
+      } },
     Home: PanelTab,
-    Later: { screen: ParkLater },
+    Later: { screen: ParkLater,
+    navigationOptions: {
+        header: null,
+      } },
   }, 
   {
     navigationOptions: ({ navigation }) => ({

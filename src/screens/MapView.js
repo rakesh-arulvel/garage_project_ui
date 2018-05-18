@@ -10,7 +10,7 @@ import {
 import MapView from 'react-native-maps';
 // import Location from './components/geolocation.js';
 import { requestPermission } from 'react-native-android-permissions';
-//import currentLocator from './assets/current_location.png'
+import currentMarker from '/Users/rakesha/garage_project_ui/assets/current_location.png';
 
 
 
@@ -24,46 +24,51 @@ export default class MapViewEx extends Component{
       {
         price: 10,
         rating: 3.4,
-        title: 'current',
+        title: 'l0',
+        const: -0.02,
         coordinates: {
-          latitude: 3.148561,
-          longitude: 101.652778
+          latitude: 1,
+          longitude: 0.5
         },
       },
       {
         price: 25,
         rating: 4.4,
         title: 'l1',
+        const: 0.04,
         coordinates: {
-          latitude: 3.149771,
-          longitude: 101.655449
+          latitude: 0.3,
+          longitude: 0.7
         },  
       },
        {
         price: 10,
         rating: 4.9,
         title: 'l2',
+        const: 0.05,
         coordinates: {
-          latitude: 3.149771,
-          longitude: 101.655449
+          latitude: 1.1,
+          longitude: 0.2
         },  
       },
        {
         price: 40,
         rating: 2.4,
         title: 'l3',
+        const: -0.04,
         coordinates: {
-          latitude: 3.149771,
-          longitude: 101.655449
+          latitude: -0.9,
+          longitude: 1
         },  
       },
        {
         price: 40,
         rating: 2.4,
         title: 'l4',
+        const: -0.06,
         coordinates: {
-          latitude: 3.149771,
-          longitude: 101.655449
+          latitude: -0.5,
+          longitude: -0.5
         },  
       }]
     }
@@ -132,6 +137,7 @@ export default class MapViewEx extends Component{
                     region={this.state.mapRegion} >
 
                     <MapView.Marker
+                        image={currentMarker}
                         coordinate={{
                             latitude: (this.state.latitude + 0.00050) || -36.82339,
                             longitude: (this.state.longitude + 0.00050) || -73.03569,
@@ -142,12 +148,12 @@ export default class MapViewEx extends Component{
                     {this.state.markers.map(marker => (
                         <MapView.Marker
                             coordinate={{
-                                latitude: (marker.coordinates.latitude + 0.00050) || -36.82339,
-                                longitude: (marker.coordinates.longitude + 0.00050) || -73.03569,
+                                latitude: (this.state.latitude + marker.coordinates.latitude + 0.00050) || -36.82339,
+                                longitude: (this.state.longitude + marker.coordinates.longitude + 0.00050) || -73.03569,
                             }} >  
                             <MapView.Callout>
-                                <Text style={{fontWeight: 'bold'}}>Price: Rs.10</Text>
-                                <Text style={{fontWeight: 'bold'}}>Rating: 3.4</Text>
+                                <Text style={{fontWeight: 'bold'}}>Price: Rs.{marker.price}</Text>
+                                <Text style={{fontWeight: 'bold'}}>Rating: {marker.rating}</Text>
                             </MapView.Callout>
                         </MapView.Marker>
                     ))}
