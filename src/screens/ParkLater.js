@@ -49,7 +49,7 @@ export default class ParkLater extends React.Component {
         style={{width: 200}}
         date={this.state.date}
         mode="datetime"
-        placeholder="select date"
+        placeholder="Start Time"
         format="YYYY-MM-DD"
         minDate={today}
         maxDate="2018-06-21"
@@ -70,10 +70,10 @@ export default class ParkLater extends React.Component {
       />
 
       <DatePicker
-        style={{width: 200}}
+        style={{width: 200, marginTop:10, marginBottom:20}}
         date={this.state.date}
         mode="datetime"
-        placeholder="select date"
+        placeholder="End Time"
         format="YYYY-MM-DD"
         minDate={today}
         maxDate="2018-06-21"
@@ -99,7 +99,7 @@ export default class ParkLater extends React.Component {
             size={15}
             color='white'
           />
-        } title='Continue' onPress={() => this.props.navigation.navigate('MapViewEx')} route='MapView' />
+        } title='Continue to Booking' onPress={() => this.props.navigation.navigate('MapViewEx')} route='MapView' />
       </View>
     )
   }
