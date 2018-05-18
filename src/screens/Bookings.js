@@ -53,6 +53,7 @@ const list = [
   
 ];
 export default class Panel extends Component {
+  static navigationOptions = { header: null }
   render() {
     return (
       <View style={styles.container}>

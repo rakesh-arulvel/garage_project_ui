@@ -13,6 +13,7 @@ import ParkLater from '../screens/ParkLater';
 import MapView from '../screens/MapView'; 
 import MapViewEx from '../screens/MapViewEx'; 
 import Bookings from '../screens/Bookings';
+import Spaces from '../screens/NewSpace';
 
 
 import SignUp from '../screens/SignUp.js';
@@ -21,11 +22,12 @@ import Welcome from '../screens/Welcome.js';
 
 
 const PanelTab = StackNavigator({
+  
   Panel: { screen: Panel },
   Bookings: { screen: Bookings },
-  // Profile: { screen: Profile },
-  // Spaces: { screen: Spaces },
-  // CreateList: { screen: CreateList },
+  //Profile: { screen: Spaces },
+  Spaces: { screen: Spaces },
+  //CreateList: { screen: Spaces },
 },
 {
   mode: 'modal',
