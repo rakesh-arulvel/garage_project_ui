@@ -33,7 +33,7 @@ export default class Panel extends Component {
               title={item.title}
               leftIcon={{ name: item.icon }}
               onPress={() => this.props.navigation.navigate(item.route)}
-              badge={{ value: i, textStyle: { color: 'white' }, containerStyle: { marginTop: -20 } }}
+              badge={{ value: (Math.random()*10).toFixed(), textStyle: { color: 'white' }, containerStyle: { marginTop: -20 } }}
             />
           ))
         }

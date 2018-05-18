@@ -72,15 +72,18 @@ export default class MapViewEx extends Component{
     // }
     handleSearch(placename){
         var that = this; 
-        fetch('https:////maps.googleapis.com/maps/api/place/textsearch/json?query=' + placename+'&key=AIzaSyC7nUV71Pd6ZKkS6hGZGf9KKXtjBUbgNw0', {
+        if (placename.length <=4){
+            return;
+        }
+        fetch('https:////maps.googleapis.com/maps/api/place/textsearch/json?query=' + placename +'&key=AIzalq7aM', {
             method: 'GET'
         })
             .then((response) => response.json())
             .then((responseJson) => {
-               
+                console.log("cords ", responseJson);
                 if (responseJson.status === 'OK' && responseJson.results.length>0){
                     let cos = responseJson.results[0].geometry.location; 
-                    console.log(cos);
+                    console.log("cords ", cos);
                     let region = {
                         latitude: cos.lat,
                         longitude: cos.lng,
@@ -104,7 +107,7 @@ export default class MapViewEx extends Component{
             <View style={{ flex: 1 }}>
                 <SearchBar lightTheme style={styles.searchBar}
   placeholder='Destination Here...'
-                    onChangeText={(text) => this.handleSearch(text)}
+                    onEndEditing={(text) => this.handleSearch(text)}
    />
                 { <MapView
                     style={styles.map}
