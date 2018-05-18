@@ -38,7 +38,7 @@ export default class MapViewEx extends Component{
                         longitude: pos.coords.longitude,
                         latitudeDelta: 0.00922 * 1.5,
                         longitudeDelta: 0.00421 * 1.5
-                    }
+                    };
                     that.setState({ mapRegion: region, latitude: pos.coords.latitude, longitude: pos.coords.longitude });
                     console.log('Your current position is:');
                     console.log(`Latitude : ${crd.latitude}`);
@@ -70,13 +70,45 @@ export default class MapViewEx extends Component{
     //         lastLong: lastLong || this.state.lastLong
     //     });
     // }
-
+    handleSearch(placename){
+        var that = this; 
+        if (placename.length <=4){
+            return;
+        }
+        fetch('https:////maps.googleapis.com/maps/api/place/textsearch/json?query=' + placename +'&key=AIzalq7aM', {
+            method: 'GET'
+        })
+            .then((response) => response.json())
+            .then((responseJson) => {
+                console.log("cords ", responseJson);
+                if (responseJson.status === 'OK' && responseJson.results.length>0){
+                    let cos = responseJson.results[0].geometry.location; 
+                    console.log("cords ", cos);
+                    let region = {
+                        latitude: cos.lat,
+                        longitude: cos.lng,
+                        latitudeDelta: 0.00922 * 1.5,
+                        longitudeDelta: 0.00421 * 1.5
+                    }
+                    that.setState({ mapRegion: region, latitude: cos.lat, longitude: cos.lng });
+                }
+                // this.setState({
+                //     data: responseJson
+                // })
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }
     render() {
         const { region } = this.props;
+
         return (
             <View style={{ flex: 1 }}>
                 <SearchBar lightTheme style={styles.searchBar}
-  placeholder='Destination Here...' />
+  placeholder='Destination Here...'
+                    onEndEditing={(text) => this.handleSearch(text)}
+   />
                 { <MapView
                     style={styles.map}
                     initialRegion={{
